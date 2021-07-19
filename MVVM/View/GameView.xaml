@@ -91,6 +91,7 @@
             Grid.ColumnSpan="3"
             Margin="100, 15, 100, 15" 
             Name="Reset"
+            Click="ResetGame"
             >
             <Button.Resources>
                 <Style TargetType="Border">

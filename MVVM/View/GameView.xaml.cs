@@ -173,7 +173,6 @@ namespace TicTacToe.MVVM.View
                 }
                 firstTurn = false;
                 return;
-
             }
         }
         private void ChangeButtonProperties(Button theButton, bool userTurn = false, string log = "")
@@ -195,6 +194,38 @@ namespace TicTacToe.MVVM.View
             clickedButton.Content = UserSymbol.ToString();
             HighlightButton(clickedButton);
             ComputerMove();
+        }
+        private void ResetButton(Button theButton)
+        {
+            theButton.Content = "";
+            theButton.IsEnabled = true;
+            theButton.Background = Brushes.White;
+        }
+        private void ResetGame(object sender, RoutedEventArgs e)
+        {
+            ResetButton(button1);
+            ResetButton(button2);
+            ResetButton(button3);
+            ResetButton(button4);
+            ResetButton(button5);
+            ResetButton(button6);
+            ResetButton(button7);
+            ResetButton(button8);
+            ResetButton(button9);
+            firstTurn = true;
+            secondTurn = true;
+            thirdTurn = true;
+            computerWins = false;
+            userWins = false;
+            /*
+            if (First == false)
+            {
+                computerMove();
+            }
+            else
+            {
+                label1.Text = $"Hello {Username}, You're First!";
+            }*/
         }
 
         private void HighlightButton(Button theButton)
