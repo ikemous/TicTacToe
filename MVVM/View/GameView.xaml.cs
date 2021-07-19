@@ -20,6 +20,28 @@ namespace TicTacToe.MVVM.View
         public GameView()
         {
             InitializeComponent();
+
+        }
+        private bool ButtonEqualsUserSymbol(Button theButton) => theButton.Content.ToString() == UserSymbol ? true : false;
+        private bool PreventWin()
+        {
+            //Diag 1 (1, 5, 9)
+            if (ButtonEqualsUserSymbol(button1) && button5.Content.ToString() == UserSymbol && button9.Content.ToString() == "")// User clicked 1 and 5, computer move on 9
+            {
+                ChangeButtonProperties(button9);
+                return true;
+            }
+            else if (button1.Content.ToString() == "" && button5.Content.ToString() == UserSymbol && button9.Content.ToString() == UserSymbol) //User clicked on 5 and 9, computer move on 1
+            {
+                ChangeButtonProperties(button1);
+                return true;
+            }
+            else if (button1.Content.ToString() == UserSymbol && button5.Content.ToString() == "" && button9.Content.ToString() == UserSymbol)//User clicked on 1 and 9, computer move on 5
+            {
+                ChangeButtonProperties(button5);
+                return true;
+            }
+            return false;
         }
 
         private void ComputerMove()
@@ -27,7 +49,7 @@ namespace TicTacToe.MVVM.View
             //Check the first turn
             if (firstTurn == true)
             {
-                if (button5.Content == UserSymbol)
+                if (ButtonEqualsUserSymbol(button5))
                 {
                     ChangeButtonProperties(button1);
                 }
