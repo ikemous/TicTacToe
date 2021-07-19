@@ -22,6 +22,12 @@ namespace TicTacToe.MVVM.View
             InitializeComponent();
         }
 
+        private void ButtonClick(object sender, RoutedEventArgs e)
+        {
+            button1.Content = "Test";
+            HighlightButton(button1);
+        }
+
 
         private void HighlightButton(Button theButton)
         {
