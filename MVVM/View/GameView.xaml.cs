@@ -23,20 +23,21 @@ namespace TicTacToe.MVVM.View
 
         }
         private bool ButtonEqualsUserSymbol(Button theButton) => theButton.Content.ToString() == UserSymbol ? true : false;
+        private bool ButtonEqualsNoText(Button theButton) => theButton.Content.ToString() == "" ? true : false;
         private bool PreventWin()
         {
             //Diag 1 (1, 5, 9)
-            if (ButtonEqualsUserSymbol(button1) && button5.Content.ToString() == UserSymbol && button9.Content.ToString() == "")// User clicked 1 and 5, computer move on 9
+            if (ButtonEqualsUserSymbol(button1) && ButtonEqualsUserSymbol(button5) && ButtonEqualsNoText(button9))// User clicked 1 and 5, computer move on 9
             {
                 ChangeButtonProperties(button9);
                 return true;
             }
-            else if (button1.Content.ToString() == "" && button5.Content.ToString() == UserSymbol && button9.Content.ToString() == UserSymbol) //User clicked on 5 and 9, computer move on 1
+            else if (ButtonEqualsNoText(button1) && ButtonEqualsUserSymbol(button5) && ButtonEqualsUserSymbol(button9)) //User clicked on 5 and 9, computer move on 1
             {
                 ChangeButtonProperties(button1);
                 return true;
             }
-            else if (button1.Content.ToString() == UserSymbol && button5.Content.ToString() == "" && button9.Content.ToString() == UserSymbol)//User clicked on 1 and 9, computer move on 5
+            else if (ButtonEqualsUserSymbol(button1) && ButtonEqualsNoText(button5) && ButtonEqualsUserSymbol(button9))//User clicked on 1 and 9, computer move on 5
             {
                 ChangeButtonProperties(button5);
                 return true;
