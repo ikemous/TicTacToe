@@ -32,6 +32,7 @@
         <Button Grid.Row="1"
                 Grid.Column="1"
                 Style="{StaticResource TicTacButtonTheme}"
+                Click="ButtonClick"
                 Name="button1"/>
         
         <Button Grid.Row="1"
