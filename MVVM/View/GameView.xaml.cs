@@ -122,6 +122,38 @@ namespace TicTacToe.MVVM.View
                 ChangeButtonProperties(button4);
                 return true;
             }
+            //Vertical 2 (2, 5, 8)
+            if (UserSymbolButton(button2) && UserSymbolButton(button5) && NoTextButton(button8))//User clicked on buttons 2 and 5, computer move on 8
+            {
+                ChangeButtonProperties(button8);
+                return true;
+            }
+            else if (NoTextButton(button2) && UserSymbolButton(button5) && UserSymbolButton(button8))//User clicked on buttons 5 and 8, computer move on 2
+            {
+                ChangeButtonProperties(button2);
+                return true;
+            }
+            else if (UserSymbolButton(button2) && NoTextButton(button5) && UserSymbolButton(button8))//User clicked on buttons 2 and 8, computer move on 5
+            {
+                ChangeButtonProperties(button5);
+                return true;
+            }
+            //Vertical 3 (3, 6, 9)
+            if (UserSymbolButton(button3) && UserSymbolButton(button6) && NoTextButton(button9))//User clicked on buttons 3 and 6, computer move on 9
+            {
+                ChangeButtonProperties(button9);
+                return true;
+            }
+            else if (NoTextButton(button3) && UserSymbolButton(button6) && UserSymbolButton(button9))//User clicked on buttons 6 and 9, computer move on button 3
+            {
+                ChangeButtonProperties(button3);
+                return true;
+            }
+            else if (UserSymbolButton(button3) && NoTextButton(button6) && UserSymbolButton(button9))//User clicked on buttons 3 and 9, computer move on button 6
+            {
+                ChangeButtonProperties(button6);
+                return true;
+            }
             //No Win Prevented
             return false;
         }
