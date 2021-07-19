@@ -22,8 +22,8 @@ namespace TicTacToe.MVVM.View
             InitializeComponent();
 
         }
-        private bool ButtonEqualsUserSymbol(Button theButton) => theButton.Content.ToString() == UserSymbol ? true : false;
-        private bool ButtonEqualsNoText(Button theButton) => theButton.Content.ToString() == "" ? true : false;
+        private bool ButtonEqualsUserSymbol(Button theButton) => theButton.Content.ToString() == UserSymbol;
+        private bool ButtonEqualsNoText(Button theButton) => theButton.Content.ToString() == "";
         private bool PreventWin()
         {
             //Diag 1 (1, 5, 9)
@@ -58,6 +58,40 @@ namespace TicTacToe.MVVM.View
                 ChangeButtonProperties(button5);
                 return true;
             }
+            //Horizontal 1 (1, 2, 3)
+            else if (ButtonEqualsUserSymbol(button1) && ButtonEqualsUserSymbol(button2) && ButtonEqualsNoText(button3))//User clicked on buttons 1 and 2, computer move on 3
+            {
+                ChangeButtonProperties(button3);
+                return true;
+            }
+            else if (ButtonEqualsNoText(button1) && ButtonEqualsUserSymbol(button2) && ButtonEqualsUserSymbol(button3))//User clicked on buttons 2 and 3, computer move on 1
+            {
+                ChangeButtonProperties(button1);
+                return true;
+            }
+            else if (ButtonEqualsUserSymbol(button1) && ButtonEqualsNoText(button2) && ButtonEqualsUserSymbol(button3))//User clicked on buttons 1 and 3, computer move on 2
+            {
+                ChangeButtonProperties(button2);
+                return true;
+            }
+            //Horizontal 2 (4, 5, 6)
+            else if (ButtonEqualsUserSymbol(button4) && ButtonEqualsUserSymbol(button5) && ButtonEqualsNoText(button6))//User clicked on buttons 4 and 5, computer move on 6
+            {
+                ChangeButtonProperties(button6);
+                return true;
+            }
+            else if (ButtonEqualsNoText(button4) && ButtonEqualsUserSymbol(button5) && ButtonEqualsUserSymbol(button6))//User clicked on buttons 5 and 6, computer move on 4
+            {
+                ChangeButtonProperties(button4);
+                return true;
+            }
+            else if (ButtonEqualsUserSymbol(button4) && ButtonEqualsNoText(button5) && ButtonEqualsUserSymbol(button6))//User clicked on buttons 4 and 6, computer moved on 5
+            {
+                ChangeButtonProperties(button5);
+                return true;
+            }
+
+            //No Win Prevented
             return false;
         }
 
