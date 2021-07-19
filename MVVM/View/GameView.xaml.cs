@@ -186,6 +186,51 @@ namespace TicTacToe.MVVM.View
                 firstTurn = false;
                 return;
             }
+            //Second Turn
+            if (secondTurn == true)
+            {
+                if (UserSymbolButton(button1) && UserSymbolButton(button6))//Button1 and Button6
+                {
+                    ChangeButtonProperties(button3);
+                }
+                else if (UserSymbolButton(button1) && UserSymbolButton(button8))
+                {
+                    ChangeButtonProperties(button4);
+                }
+                else if (UserSymbolButton(button1) && UserSymbolButton(button9))
+                {
+                    ChangeButtonProperties(button4);
+                }
+                else if (UserSymbolButton(button2) && UserSymbolButton(button9))
+                {
+                    ChangeButtonProperties(button3);
+                }
+                else if (UserSymbolButton(button3) && UserSymbolButton(button7))
+                {
+                    ChangeButtonProperties(button4);
+                }
+                else if (UserSymbolButton(button5) && UserSymbolButton(button9))
+                {
+                    ChangeButtonProperties(button3);
+                }
+                else if (UserSymbolButton(button8) && UserSymbolButton(button3))
+                {
+                    ChangeButtonProperties(button6);
+                }
+                else if (UserSymbolButton(button8) && UserSymbolButton(button6))
+                {
+                    ChangeButtonProperties(button9);
+                }
+                else
+                {
+                    if (PreventWin() == false)
+                    {
+                        DefaultMoves();
+                    }
+                }
+                secondTurn = false;
+                return;
+            }
         }
         private void ChangeButtonProperties(Button theButton, bool userTurn = false, string log = "")
         {
