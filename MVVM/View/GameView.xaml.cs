@@ -22,13 +22,25 @@ namespace TicTacToe.MVVM.View
             InitializeComponent();
         }
 
+        private void ChangeButtonProperties(Button theButton, bool userTurn = false, string log = "")
+        {
+            if (userTurn)
+            {
+                theButton.Content = UserSymbol;
+            }
+            else
+            {
+                theButton.Content = ComputerSymbol;
+            }
+            theButton.IsEnabled = false;
+        }
+
         private void ButtonClick(object sender, RoutedEventArgs e)
         {
             Button clickedButton = sender as Button;
             clickedButton.Content = UserSymbol.ToString();
             HighlightButton(clickedButton);
         }
-
 
         private void HighlightButton(Button theButton)
         {
