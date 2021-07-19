@@ -22,6 +22,24 @@ namespace TicTacToe.MVVM.View
             InitializeComponent();
         }
 
+        private void ComputerMove()
+        {
+            //Check the first turn
+            if (firstTurn == true)
+            {
+                if (button5.Content == UserSymbol)
+                {
+                    ChangeButtonProperties(button1);
+                }
+                else
+                {
+                    ChangeButtonProperties(button5);
+                }
+                firstTurn = false;
+                return;
+
+            }
+        }
         private void ChangeButtonProperties(Button theButton, bool userTurn = false, string log = "")
         {
             if (userTurn)
@@ -40,6 +58,7 @@ namespace TicTacToe.MVVM.View
             Button clickedButton = sender as Button;
             clickedButton.Content = UserSymbol.ToString();
             HighlightButton(clickedButton);
+            ComputerMove();
         }
 
         private void HighlightButton(Button theButton)
