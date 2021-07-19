@@ -8,9 +8,9 @@ namespace TicTacToe.Core
 {
     class GlobalData
     {
-        static public string UserSymbol { get; set; }
-        static public string UserName { get; set; }
-        static public string ComputerSymbol { get; set; }
+        static public string UserSymbol { get; set; } = "X";
+        static public string UserName { get; set; } = "";
+        static public string ComputerSymbol { get; set; } = "O";
         static public bool UserFirst { get; set; } = true;
     }
 }

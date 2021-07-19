@@ -24,8 +24,9 @@ namespace TicTacToe.MVVM.View
 
         private void ButtonClick(object sender, RoutedEventArgs e)
         {
-            button1.Content = "Test";
-            HighlightButton(button1);
+            Button clickedButton = sender as Button;
+            clickedButton.Content = UserSymbol.ToString();
+            HighlightButton(clickedButton);
         }
 
 
@@ -33,6 +34,7 @@ namespace TicTacToe.MVVM.View
         {
             theButton.Background = Brushes.Red;
         }
+
         private void LockAllTiles()
         {
             button1.IsEnabled = false;
