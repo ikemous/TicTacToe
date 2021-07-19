@@ -41,7 +41,7 @@
             FontSize="16"
             Name="UserNameTextBox"
             TextAlignment="Center"
-            VerticalAlignment="Bottom" TextChanged="HandleTextBoxChange"
+            VerticalAlignment="Bottom"
             />
         <TextBlock
             Text="Symbol Choice"
@@ -109,7 +109,9 @@
             HorizontalAlignment="Center"
             Margin="90, 5, 0, 0"
             GroupName="StarterChoiceGroup"
-            IsChecked="True" FontSize="16"
+            IsChecked="True"
+            Click="HandlePlayerRadioClick"
+            FontSize="16"
             />
         <TextBlock
             Text="Player"
@@ -127,6 +129,7 @@
             HorizontalAlignment="Left"
             Margin="10, 5, 0, 0"
             GroupName="StarterChoiceGroup"
+            Click="HandleComptuerRadioClick"
             FontSize="16"
             />
         <TextBlock

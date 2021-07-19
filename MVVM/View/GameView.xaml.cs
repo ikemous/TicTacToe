@@ -20,7 +20,10 @@ namespace TicTacToe.MVVM.View
         public GameView()
         {
             InitializeComponent();
-
+            if(First == false)
+            {
+                ComputerMove();
+            }
         }
         private bool UserSymbolButton(Button theButton) => theButton.Content.ToString() == UserSymbol;
         private bool ComputerSymbolButton(Button theButton) => theButton.Content.ToString() == ComputerSymbol;
@@ -474,7 +477,7 @@ namespace TicTacToe.MVVM.View
                     {
                         ChangeButtonProperties(button3);
                     }
-                    else if (button1.Text == UserSymbol && button8.Text == UserSymbol && button2.Text == ComputerSymbol && button5.Text == ComputerSymbol)
+                    else if (UserSymbolButton(button1) && UserSymbolButton(button8) && ComputerSymbolButton(button2) && ComputerSymbolButton(button5))
                     {
                         ChangeButtonProperties(button4);
                     }
@@ -489,6 +492,16 @@ namespace TicTacToe.MVVM.View
                 }
                 thirdTurn = false;
                 return;
+            }
+
+            computerWins = MoveForWin();
+            if (computerWins == false)
+            {
+                if (PreventWin() == false)
+                {
+                    DefaultMoves();
+                    return;
+                }
             }
         }
         private void ChangeButtonProperties(Button theButton, bool userTurn = false, string log = "")
@@ -507,8 +520,7 @@ namespace TicTacToe.MVVM.View
         private void ButtonClick(object sender, RoutedEventArgs e)
         {
             Button clickedButton = sender as Button;
-            clickedButton.Content = UserSymbol.ToString();
-            HighlightButton(clickedButton);
+            ChangeButtonProperties(clickedButton, true);
             ComputerMove();
         }
         private void ResetButton(Button theButton)
@@ -533,15 +545,11 @@ namespace TicTacToe.MVVM.View
             thirdTurn = true;
             computerWins = false;
             userWins = false;
-            /*
+            
             if (First == false)
             {
-                computerMove();
+                ComputerMove();
             }
-            else
-            {
-                label1.Text = $"Hello {Username}, You're First!";
-            }*/
         }
 
         private void HighlightButton(Button theButton)

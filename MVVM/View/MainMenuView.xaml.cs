@@ -29,9 +29,13 @@ namespace TicTacToe.MVVM.View
             GlobalData.UserFirst = !GlobalData.UserFirst;
         }
 
-        private void HandleTextBoxChange(object sender, TextChangedEventArgs e)
+        private void HandlePlayerRadioClick(object sender, RoutedEventArgs e)
         {
-
+            GlobalData.UserFirst = true;
+        }
+        private void HandleComptuerRadioClick(object sender, RoutedEventArgs e)
+        {
+            GlobalData.UserFirst = false;
         }
     }
 }
