@@ -23,6 +23,7 @@ namespace TicTacToe.MVVM.View
 
         }
         private bool UserSymbolButton(Button theButton) => theButton.Content.ToString() == UserSymbol;
+        private bool ComputerSymbolButton(Button theButton) => theButton.Content.ToString() == ComputerSymbol;
         private bool NoTextButton(Button theButton) => theButton.Content.ToString() == "";
         private bool PreventWin()
         {
@@ -157,6 +158,234 @@ namespace TicTacToe.MVVM.View
             //No Win Prevented
             return false;
         }
+        private bool MoveForWin()
+        {
+            //Diag (1, 5, 9)
+            if (ComputerSymbolButton(button1) && ComputerSymbolButton(button5) && NoTextButton(button9)) // Computer already filled 1 and 5, computer move on 9
+            {
+                ChangeButtonProperties(button9);
+                HighlightButton(button1);
+                HighlightButton(button5);
+                HighlightButton(button9);
+                LockAllTiles();
+                return true;
+            }
+            else if (NoTextButton(button1) && ComputerSymbolButton(button5) && ComputerSymbolButton(button9)) //Computer filled on 5 and 9, computer move on 1
+            {
+                ChangeButtonProperties(button1);
+                HighlightButton(button1);
+                HighlightButton(button5);
+                HighlightButton(button9);
+                LockAllTiles();
+                return true;
+            }
+            else if (ComputerSymbolButton(button1) && NoTextButton(button5) && ComputerSymbolButton(button9)) //Computer filled on 1 and 9, computer move on 5
+            {
+                ChangeButtonProperties(button5);
+                HighlightButton(button1);
+                HighlightButton(button5);
+                HighlightButton(button9);
+                LockAllTiles();
+                return true;
+            }
+            //Diag 2 (3, 5, 7)
+            else if (ComputerSymbolButton(button3) && ComputerSymbolButton(button5) && NoTextButton(button7)) //Computer filled on button 3 and 5, computer move on 7
+            {
+                ChangeButtonProperties(button7);
+                HighlightButton(button3);
+                HighlightButton(button5);
+                HighlightButton(button7);
+                LockAllTiles();
+                return true;
+            }
+            else if (NoTextButton(button3) && ComputerSymbolButton(button5) && ComputerSymbolButton(button7)) //Computer filled on buttons 5 and 7, computer move on 3 
+            {
+                ChangeButtonProperties(button3);
+                HighlightButton(button3);
+                HighlightButton(button5);
+                HighlightButton(button7);
+                LockAllTiles();
+                return true;
+            }
+            else if (ComputerSymbolButton(button3) && NoTextButton(button5) && ComputerSymbolButton(button7)) //Computer fille on buttons 3 and 7, computer move on 5
+            {
+                ChangeButtonProperties(button5);
+                HighlightButton(button3);
+                HighlightButton(button5);
+                HighlightButton(button7);
+                LockAllTiles();
+                return true;
+            }
+            //Horizontal 1 (1, 2, 3)
+            else if (ComputerSymbolButton(button1) && ComputerSymbolButton(button2) && NoTextButton(button3)) //Computer filled on buttons 1 and 2, computer move on 3
+            {
+                ChangeButtonProperties(button3);
+                HighlightButton(button1);
+                HighlightButton(button2);
+                HighlightButton(button3);
+                LockAllTiles();
+                return true;
+            }
+            else if (NoTextButton(button1) && ComputerSymbolButton(button2) && ComputerSymbolButton(button3)) //Computer filled on buttons 2 and 3, computer move on 1
+            {
+                ChangeButtonProperties(button1);
+                HighlightButton(button1);
+                HighlightButton(button2);
+                HighlightButton(button3);
+                LockAllTiles();
+                return true;
+            }
+            else if (ComputerSymbolButton(button1) && NoTextButton(button2) && ComputerSymbolButton(button3)) //Computer filled on buttons 1 and 3, computer move on 2
+            {
+                ChangeButtonProperties(button2);
+                HighlightButton(button1);
+                HighlightButton(button2);
+                HighlightButton(button3);
+                LockAllTiles();
+                return true;
+            }
+            //Horizontal 2 (4, 5, 6)
+            else if (ComputerSymbolButton(button4) && ComputerSymbolButton(button5) && NoTextButton(button6)) //Computer filled on buttons 4 and 5, computer move on 6
+            {
+                ChangeButtonProperties(button6);
+                HighlightButton(button4);
+                HighlightButton(button5);
+                HighlightButton(button6);
+                LockAllTiles();
+                return true;
+            }
+            else if (NoTextButton(button4) && ComputerSymbolButton(button5) && ComputerSymbolButton(button6))//Computer filled on buttons 5 and 6, computer move on 4
+            {
+                ChangeButtonProperties(button4);
+                HighlightButton(button4);
+                HighlightButton(button5);
+                HighlightButton(button6);
+                LockAllTiles();
+                return true;
+            }
+            else if (ComputerSymbolButton(button4) && NoTextButton(button5) && ComputerSymbolButton(button6))//Computer filled on buttons 4 and 6, computer moved on 5
+            {
+                ChangeButtonProperties(button5);
+                HighlightButton(button4);
+                HighlightButton(button5);
+                HighlightButton(button6);
+                LockAllTiles();
+                return true;
+            }
+            //Horizontal 3 (7, 8, 9)
+            else if (ComputerSymbolButton(button7) && ComputerSymbolButton(button8) && NoTextButton(button9)) //Computeer filled on 7 and 8, computer move on 9
+            {
+                ChangeButtonProperties(button9);
+                HighlightButton(button7);
+                HighlightButton(button8);
+                HighlightButton(button9);
+                LockAllTiles();
+                return true;
+            }
+            else if (NoTextButton(button7) && ComputerSymbolButton(button8) && ComputerSymbolButton(button9))//Computer filled on buttons 8 and 9, computer move on 7
+            {
+                ChangeButtonProperties(button7);
+                HighlightButton(button7);
+                HighlightButton(button8);
+                HighlightButton(button9);
+                LockAllTiles();
+                return true;
+            }
+            else if (ComputerSymbolButton(button7) && NoTextButton(button8) && ComputerSymbolButton(button9))//Computer filled on buttons 7 and 9, computer move on 8
+            {
+                ChangeButtonProperties(button8);
+                HighlightButton(button7);
+                HighlightButton(button8);
+                HighlightButton(button9);
+                LockAllTiles();
+                return true;
+            }
+            //Vertical 1 (1, 4, 7)
+            else if (ComputerSymbolButton(button1) && ComputerSymbolButton(button4) && NoTextButton(button7))//Computer filled on buttons 1 and 4, computer move on 7
+            {
+                ChangeButtonProperties(button7);
+                HighlightButton(button1);
+                HighlightButton(button4);
+                HighlightButton(button7);
+                LockAllTiles();
+                return true;
+            }
+            else if (NoTextButton(button1) && ComputerSymbolButton(button4) && ComputerSymbolButton(button7))//computer filled on buttons 4 and 7, computer move on 1
+            {
+                ChangeButtonProperties(button1);
+                HighlightButton(button1);
+                HighlightButton(button4);
+                HighlightButton(button7);
+                LockAllTiles();
+                return true;
+            }
+            else if (ComputerSymbolButton(button1) && NoTextButton(button4) && ComputerSymbolButton(button7))//Computer filled on buttons 1 and 7, computer move on 4
+            {
+                ChangeButtonProperties(button4);
+                HighlightButton(button1);
+                HighlightButton(button4);
+                HighlightButton(button7);
+                LockAllTiles();
+                return true;
+            }
+            //Vertical 2 (2, 5, 8)
+            else if (ComputerSymbolButton(button2) && ComputerSymbolButton(button5) && NoTextButton(button8))//Computer filled on buttons 2 and 5, computer move on 8
+            {
+                ChangeButtonProperties(button8);
+                HighlightButton(button2);
+                HighlightButton(button5);
+                HighlightButton(button8);
+                LockAllTiles();
+                return true;
+            }
+            else if (NoTextButton(button2) && ComputerSymbolButton(button5) && ComputerSymbolButton(button8))//Computer filled on buttons 5 and 8, computer move on 2
+            {
+                ChangeButtonProperties(button2);
+                HighlightButton(button2);
+                HighlightButton(button5);
+                HighlightButton(button8);
+                LockAllTiles();
+                return true;
+            }
+            else if (ComputerSymbolButton(button2) && NoTextButton(button5) && ComputerSymbolButton(button8))//Computer filled on buttons 2 and 8, computer move on 5
+            {
+                ChangeButtonProperties(button5);
+                HighlightButton(button2);
+                HighlightButton(button5);
+                HighlightButton(button8);
+                LockAllTiles();
+                return true;
+            }
+            //Vertical 3 (3, 6, 9)
+            else if (ComputerSymbolButton(button3) && ComputerSymbolButton(button6) && NoTextButton(button9))//Computer filled on buttons 3 and 6, computer move on 9
+            {
+                ChangeButtonProperties(button9);
+                HighlightButton(button3);
+                HighlightButton(button6);
+                HighlightButton(button9);
+                LockAllTiles();
+                return true;
+            }
+            else if (NoTextButton (button3) && ComputerSymbolButton(button6) && ComputerSymbolButton(button9))//Computer filled on buttons 6 and 9, computer move on button 3
+            {
+                ChangeButtonProperties(button3);
+                HighlightButton(button3);
+                HighlightButton(button6);
+                HighlightButton(button9);
+                LockAllTiles();
+                return true;
+            }
+            else if (ComputerSymbolButton(button3) && NoTextButton(button6) && ComputerSymbolButton(button9))//Computer filled on buttons 3 and 9, computer move on button 6
+            {
+                ChangeButtonProperties(button6);
+                HighlightButton(button3);
+                HighlightButton(button6);
+                HighlightButton(button9);
+                LockAllTiles();
+                return true;
+            }
+            return false;
+        }
         private void DefaultMoves()
         {
             //No Other moves, move to the next button
@@ -173,7 +402,7 @@ namespace TicTacToe.MVVM.View
         private void ComputerMove()
         {
             //Check the first turn
-            if (firstTurn == true)
+            if (firstTurn)
             {
                 if (UserSymbolButton(button5))
                 {
@@ -187,7 +416,7 @@ namespace TicTacToe.MVVM.View
                 return;
             }
             //Second Turn
-            if (secondTurn == true)
+            if (secondTurn)
             {
                 if (UserSymbolButton(button1) && UserSymbolButton(button6))//Button1 and Button6
                 {
