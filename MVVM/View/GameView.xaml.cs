@@ -42,6 +42,22 @@ namespace TicTacToe.MVVM.View
                 ChangeButtonProperties(button5);
                 return true;
             }
+            //Diag 2 (3, 5, 7)
+            else if (ButtonEqualsUserSymbol(button3) && ButtonEqualsUserSymbol(button5) && ButtonEqualsNoText(button7))//User clicked on button 3 and 5, computer move on 7
+            {
+                ChangeButtonProperties(button7);
+                return true;
+            }
+            else if (ButtonEqualsNoText(button3) && ButtonEqualsUserSymbol(button5) && ButtonEqualsUserSymbol(button7))//User clicked on buttons 5 and 7, computer move on 3
+            {
+                ChangeButtonProperties(button3);
+                return true;
+            }
+            else if (ButtonEqualsUserSymbol(button3) && ButtonEqualsNoText(button5) && ButtonEqualsUserSymbol(button7))//User clicked on buttons 3 and 7, computer move on 5
+            {
+                ChangeButtonProperties(button5);
+                return true;
+            }
             return false;
         }
 
