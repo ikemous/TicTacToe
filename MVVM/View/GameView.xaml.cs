@@ -460,6 +460,36 @@ namespace TicTacToe.MVVM.View
                 secondTurn = false;
                 return;
             }
+
+            computerWins = MoveForWin();
+            if (thirdTurn)
+            {
+                if (computerWins == false)
+                {
+                    if (UserSymbolButton(button1) && UserSymbolButton(button3) && !UserSymbolButton(button4))
+                    {
+                        ChangeButtonProperties(button4);
+                    }
+                    else if (UserSymbolButton(button1) && UserSymbolButton(button6) && UserSymbolButton(button8))
+                    {
+                        ChangeButtonProperties(button3);
+                    }
+                    else if (button1.Text == UserSymbol && button8.Text == UserSymbol && button2.Text == ComputerSymbol && button5.Text == ComputerSymbol)
+                    {
+                        ChangeButtonProperties(button4);
+                    }
+                    else
+                    {
+                        if (PreventWin() == false)
+                        {
+                            DefaultMoves();
+                        }
+
+                    }
+                }
+                thirdTurn = false;
+                return;
+            }
         }
         private void ChangeButtonProperties(Button theButton, bool userTurn = false, string log = "")
         {
