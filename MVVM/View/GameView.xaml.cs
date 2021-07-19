@@ -157,7 +157,19 @@ namespace TicTacToe.MVVM.View
             //No Win Prevented
             return false;
         }
-
+        private void DefaultMoves()
+        {
+            //No Other moves, move to the next button
+            if (NoTextButton(button1)) ChangeButtonProperties(button1);
+            else if (NoTextButton(button2)) ChangeButtonProperties(button2);
+            else if (NoTextButton(button3)) ChangeButtonProperties(button3);
+            else if (NoTextButton(button4)) ChangeButtonProperties(button4);
+            else if (NoTextButton(button5)) ChangeButtonProperties(button5);
+            else if (NoTextButton(button6)) ChangeButtonProperties(button6);
+            else if (NoTextButton(button7)) ChangeButtonProperties(button7);
+            else if (NoTextButton(button8)) ChangeButtonProperties(button8);
+            else if (NoTextButton(button9)) ChangeButtonProperties(button9);
+        }
         private void ComputerMove()
         {
             //Check the first turn
