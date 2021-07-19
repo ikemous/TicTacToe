@@ -22,5 +22,22 @@ namespace TicTacToe.MVVM.View
             InitializeComponent();
         }
 
+
+        private void HighlightButton(Button theButton)
+        {
+            theButton.Background = Brushes.Red;
+        }
+        private void LockAllTiles()
+        {
+            button1.IsEnabled = false;
+            button2.IsEnabled = false;
+            button3.IsEnabled = false;
+            button4.IsEnabled = false;
+            button5.IsEnabled = false;
+            button6.IsEnabled = false;
+            button7.IsEnabled = false;
+            button8.IsEnabled = false;
+            button9.IsEnabled = false;
+        }
     }
 }
