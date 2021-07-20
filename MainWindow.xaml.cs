@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+using System.Windows.Input;
 using TicTacToe.Core;
 
 namespace TicTacToe
@@ -25,5 +26,13 @@ namespace TicTacToe
                 StartButton.Visibility = Visibility.Visible;
             }
         }
+        private void MoveWindow(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+                this.DragMove();
+        }
+
+        private void CloseWindow(object sender, RoutedEventArgs e) => this.Close();
+        private void MinimizeWindow(object sender, RoutedEventArgs e) => this.WindowState = WindowState.Minimized;
     }
 }

@@ -14,11 +14,11 @@
     <Window.DataContext>
         <viewModel:MainViewModel />
     </Window.DataContext>
-    
+
     <Border Background="#272537"
             CornerRadius="30"
             >
-        <Grid>
+        <Grid MouseDown="MoveWindow">
             <Grid.RowDefinitions>
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="50"/>
@@ -33,19 +33,56 @@
             <Border 
                 Background="LightGray" 
                 Grid.ColumnSpan="3"
-                CornerRadius="30 30 0 0">
-                
-            </Border>
-            <StackPanel Grid.Column="0" Grid.Row="1">
-                <TextBlock 
-                    Text="Tic-Tac-Toe"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Center"
-                    Foreground="White"
-                    FontSize="28"
-                    Height="40"
-                    Margin="5"/>
-            </StackPanel>
+                CornerRadius="30 30 0 0" />
+
+            <Button 
+                Grid.Column="2" 
+                Height="24"
+                Width="24"
+                Panel.ZIndex="1"
+                Background="Yellow"
+                Click="MinimizeWindow"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center" 
+                Margin="93,4,82,2"
+                >
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="360" />
+                    </Style>
+                </Button.Resources>
+                <Button.Content>
+                    -
+                </Button.Content>
+            </Button>
+            <Button 
+                Grid.Column="2" 
+                Height="25"
+                Width="25"
+                Panel.ZIndex="1"
+                Background="Red"
+                Content="X"
+                Click="CloseWindow"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center" Margin="135,2,40,0"
+                >
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="360" />
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+            <TextBlock 
+                Grid.Column="0" 
+                Grid.Row="1"
+                Text="Tic-Tac-Toe"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Foreground="White"
+                FontSize="28"
+                Height="40"
+                Margin="5"/>
 
             <Button
                 Grid.Row="1"

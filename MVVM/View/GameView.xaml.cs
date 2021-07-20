@@ -464,10 +464,9 @@ namespace TicTacToe.MVVM.View
                 return;
             }
 
-            computerWins = MoveForWin();
             if (thirdTurn)
             {
-                if (computerWins == false)
+                if (MoveForWin() == false)
                 {
                     if (UserSymbolButton(button1) && UserSymbolButton(button3) && !UserSymbolButton(button4))
                     {
