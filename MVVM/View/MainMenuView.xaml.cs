@@ -22,7 +22,7 @@ namespace TicTacToe.MVVM.View
         private void HandleOClick(object sender, RoutedEventArgs e)
         {
             GlobalData.UserSymbol = "O";
-            GlobalData.ComputerSymbol = "Y";
+            GlobalData.ComputerSymbol = "X";
         }
         private void HandlePlacementClick(object sender, RoutedEventArgs e)
         {
