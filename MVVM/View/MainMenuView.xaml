@@ -79,7 +79,8 @@
             VerticalAlignment="Top"
             HorizontalAlignment="Center"
             Margin="-50, 0, 0, 0"
-            GroupName="SymbolChoiceGroup" FontSize="16"
+            GroupName="SymbolChoiceGroup" 
+            FontSize="16" Click="HandleOClick"
             />
         <TextBlock
             Text="O"
