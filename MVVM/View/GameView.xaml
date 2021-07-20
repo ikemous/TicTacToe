@@ -25,6 +25,8 @@
         <TextBlock 
             Grid.Column="1"
             Grid.ColumnSpan="3" 
+            FontSize="26"
+            Foreground="White"
             Name="MessageBlock"
             VerticalAlignment="Center"
             HorizontalAlignment="Center"/>
