@@ -42,6 +42,7 @@
             Name="UserNameTextBox"
             TextAlignment="Center"
             VerticalAlignment="Bottom"
+            TextChanged="HandleTextChange"
             />
         <TextBlock
             Text="Symbol Choice"

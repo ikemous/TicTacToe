@@ -28,7 +28,10 @@ namespace TicTacToe.MVVM.View
         {
             GlobalData.UserFirst = !GlobalData.UserFirst;
         }
-
+        private void HandleTextChange(object sender, TextChangedEventArgs e)
+        {
+            GlobalData.UserName = UserNameTextBox.Text;
+        }
         private void HandlePlayerRadioClick(object sender, RoutedEventArgs e)
         {
             GlobalData.UserFirst = true;
