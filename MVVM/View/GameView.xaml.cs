@@ -12,6 +12,7 @@ namespace TicTacToe.MVVM.View
     {
         private string UserSymbol = GlobalData.UserSymbol;
         private string ComputerSymbol = GlobalData.ComputerSymbol;
+        private string Message = "";
         private bool firstTurn = true, secondTurn = true, thirdTurn = true;
         private bool First = GlobalData.UserFirst;
         private bool computerWins = false;
@@ -24,6 +25,10 @@ namespace TicTacToe.MVVM.View
             {
                 ComputerMove();
             }
+        }
+        private void DisplayMessage(string message)
+        {
+
         }
         private bool UserSymbolButton(Button theButton) => theButton.Content.ToString() == UserSymbol;
         private bool ComputerSymbolButton(Button theButton) => theButton.Content.ToString() == ComputerSymbol;
