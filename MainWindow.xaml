@@ -41,6 +41,7 @@
                 Click="MinimizeWindow"
                 Background="Yellow"
                 Style="{StaticResource WindowButtonTheme}" Margin="95,2,80,0" RenderTransformOrigin="2.6,0.5"/>
+            
             <Button Grid.Column="2"
                     Style="{StaticResource WindowButtonTheme}"
                     Background="Red"
