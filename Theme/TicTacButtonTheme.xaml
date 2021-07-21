@@ -3,12 +3,12 @@
     <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="{x:Type Button}" x:Key="TicTacButtonTheme">
         <Style.Setters>
             <Setter Property="Background" Value="White" />
+            <Setter Property="FontSize" Value="30" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Border Background="{TemplateBinding Background}" BorderThickness="1" CornerRadius="10" Margin="10, 5, 10, 5">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center">
-
                             </ContentPresenter>
                         </Border>
                     </ControlTemplate>

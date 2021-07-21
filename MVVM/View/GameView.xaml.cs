@@ -10,11 +10,9 @@ namespace TicTacToe.MVVM.View
     /// </summary>
     public partial class GameView : UserControl
     {
-        private string UserSymbol = GlobalData.UserSymbol;
-        private string ComputerSymbol = GlobalData.ComputerSymbol;
-        private string UserName = GlobalData.UserName;
+        private readonly string UserSymbol = GlobalData.UserSymbol, ComputerSymbol = GlobalData.ComputerSymbol, UserName = GlobalData.UserName;
         private bool firstTurn = true, secondTurn = true, thirdTurn = true;
-        private bool First = GlobalData.UserFirst;
+        private readonly bool First = GlobalData.UserFirst;
         public GameView()
         {
             InitializeComponent();
