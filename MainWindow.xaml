@@ -37,7 +37,7 @@
             <Button 
                 Grid.Column="2"
                 Content="-"
-                FontSize="18"
+                FontSize="19"
                 Click="MinimizeWindow"
                 Background="Yellow"
                 Style="{StaticResource WindowButtonTheme}" Margin="95,2,80,0" RenderTransformOrigin="2.6,0.5"/>

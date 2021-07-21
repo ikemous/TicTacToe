@@ -111,6 +111,10 @@ namespace TicTacToe.MVVM.View
                 {
                     ChangeButtonProperties(button9);
                 }
+                else if(UserSymbolButton(button6) && UserSymbolButton(button7))
+                {
+                    ChangeButtonProperties(button8);
+                }
                 else
                 {
                     if (PreventWin() == false)
