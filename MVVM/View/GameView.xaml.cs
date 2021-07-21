@@ -23,10 +23,11 @@ namespace TicTacToe.MVVM.View
                 ComputerMove();
             }
         }
-        private void DisplayMessage(string message)
-        {
-            MessageBlock.Text = message;
-        }
+        private void DisplayMessage(string message) => MessageBlock.Text = message;
+        private bool UserSymbolButton(Button theButton) => theButton.Content.ToString() == UserSymbol;
+        private bool ComputerSymbolButton(Button theButton) => theButton.Content.ToString() == ComputerSymbol;
+        private bool NoTextButton(Button theButton) => theButton.Content.ToString() == "";
+        private bool ButtonIsClicked(Button theButton) => theButton.Content.ToString() != "" ? true : false;
         private void WinMove(Button winningButton, Button button2, Button button3)
         {
             ChangeButtonProperties(winningButton);
@@ -36,9 +37,6 @@ namespace TicTacToe.MVVM.View
             DisplayMessage("Rip X.X");
             LockAllTiles();
         }
-        private bool UserSymbolButton(Button theButton) => theButton.Content.ToString() == UserSymbol;
-        private bool ComputerSymbolButton(Button theButton) => theButton.Content.ToString() == ComputerSymbol;
-        private bool NoTextButton(Button theButton) => theButton.Content.ToString() == "";
         private bool PreventWin()
         {
             //Diag 1 (1, 5, 9)
@@ -426,17 +424,9 @@ namespace TicTacToe.MVVM.View
             DisplayMessage("");
             CatScratch();
         }
-        private bool ButtonIsClicked(Button theButton) => theButton.Content.ToString() != "" ? true : false;
         private void ChangeButtonProperties(Button theButton, bool userTurn = false)
         {
-            if (userTurn)
-            {
-                theButton.Content = UserSymbol;
-            }
-            else
-            {
-                theButton.Content = ComputerSymbol;
-            }
+            theButton.Content = userTurn ? UserSymbol : ComputerSymbol;
             theButton.IsEnabled = false;
         }
         private void CatScratch()
@@ -476,8 +466,6 @@ namespace TicTacToe.MVVM.View
             firstTurn = true;
             secondTurn = true;
             thirdTurn = true;
-            computerWins = false;
-            userWins = false;
             
             if (First == false)
             {

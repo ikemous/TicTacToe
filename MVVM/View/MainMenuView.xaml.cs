@@ -24,21 +24,9 @@ namespace TicTacToe.MVVM.View
             GlobalData.UserSymbol = "O";
             GlobalData.ComputerSymbol = "X";
         }
-        private void HandlePlacementClick(object sender, RoutedEventArgs e)
-        {
-            GlobalData.UserFirst = !GlobalData.UserFirst;
-        }
-        private void HandleTextChange(object sender, TextChangedEventArgs e)
-        {
-            GlobalData.UserName = UserNameTextBox.Text;
-        }
-        private void HandlePlayerRadioClick(object sender, RoutedEventArgs e)
-        {
-            GlobalData.UserFirst = true;
-        }
-        private void HandleComptuerRadioClick(object sender, RoutedEventArgs e)
-        {
-            GlobalData.UserFirst = false;
-        }
+        private void HandlePlacementClick(object sender, RoutedEventArgs e) => GlobalData.UserFirst = !GlobalData.UserFirst;
+        private void HandleTextChange(object sender, TextChangedEventArgs e) => GlobalData.UserName = UserNameTextBox.Text;
+        private void HandlePlayerRadioClick(object sender, RoutedEventArgs e) => GlobalData.UserFirst = true;
+        private void HandleComptuerRadioClick(object sender, RoutedEventArgs e) => GlobalData.UserFirst = false;
     }
 }
