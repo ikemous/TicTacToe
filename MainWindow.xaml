@@ -34,44 +34,19 @@
                 Background="LightGray" 
                 Grid.ColumnSpan="3"
                 CornerRadius="30 30 0 0" />
-
             <Button 
-                Grid.Column="2" 
-                Height="24"
-                Width="24"
-                Panel.ZIndex="1"
-                Background="Yellow"
+                Grid.Column="2"
+                Content="-"
+                FontSize="18"
                 Click="MinimizeWindow"
-                VerticalAlignment="Center"
-                HorizontalAlignment="Center" 
-                Margin="93,4,82,2"
-                >
-                <Button.Resources>
-                    <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="360" />
-                    </Style>
-                </Button.Resources>
-                <Button.Content>
-                    -
-                </Button.Content>
-            </Button>
-            <Button 
-                Grid.Column="2" 
-                Height="25"
-                Width="25"
-                Panel.ZIndex="1"
-                Background="Red"
-                Content="X"
-                Click="CloseWindow"
-                VerticalAlignment="Center"
-                HorizontalAlignment="Center" Margin="135,2,40,0"
-                >
-                <Button.Resources>
-                    <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="360" />
-                    </Style>
-                </Button.Resources>
-            </Button>
+                Background="Yellow"
+                Style="{StaticResource WindowButtonTheme}" Margin="95,2,80,0" RenderTransformOrigin="2.6,0.5"/>
+            <Button Grid.Column="2"
+                    Style="{StaticResource WindowButtonTheme}"
+                    Background="Red"
+                    Click="CloseWindow"
+                    Content="X"
+                    FontSize="19" Margin="128,2,48,0"/>
 
             <TextBlock 
                 Grid.Column="0" 

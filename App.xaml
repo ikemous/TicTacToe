@@ -9,6 +9,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Theme/TicTacButtonTheme.xaml" />
+                <ResourceDictionary Source="Theme/WindowButtonTheme.xaml" />
             </ResourceDictionary.MergedDictionaries>
             
             <DataTemplate DataType="{x:Type viewModel:MainMenuViewModel}">
