@@ -16,11 +16,11 @@
             <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="125"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="125"/>
         </Grid.ColumnDefinitions>
         <TextBlock 
             Grid.Column="1"
@@ -91,7 +91,7 @@
             Grid.Row="5"
             Grid.Column="1"
             Grid.ColumnSpan="3"
-            Margin="100, 15, 100, 15" 
+            Margin="155,15" 
             Name="Reset"
             Click="ResetGame"
             >

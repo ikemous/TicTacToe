@@ -15,9 +15,6 @@ namespace TicTacToe.MVVM.View
         private string UserName = GlobalData.UserName;
         private bool firstTurn = true, secondTurn = true, thirdTurn = true;
         private bool First = GlobalData.UserFirst;
-        private bool computerWins = false;
-        private bool userWins = false;
-
         public GameView()
         {
             InitializeComponent();
@@ -413,8 +410,8 @@ namespace TicTacToe.MVVM.View
                             DefaultMoves();
                         }
                     }
+                    DisplayMessage("Keep Trying!");
                 }
-                DisplayMessage("Keep Trying!");
                 thirdTurn = false;
                 return;
             }
@@ -427,7 +424,9 @@ namespace TicTacToe.MVVM.View
                 }
             }
             DisplayMessage("");
+            CatScratch();
         }
+        private bool ButtonIsClicked(Button theButton) => theButton.Content.ToString() != "" ? true : false;
         private void ChangeButtonProperties(Button theButton, bool userTurn = false)
         {
             if (userTurn)
@@ -440,7 +439,17 @@ namespace TicTacToe.MVVM.View
             }
             theButton.IsEnabled = false;
         }
-
+        private void CatScratch()
+        {
+            if (ButtonIsClicked(button1) && ButtonIsClicked(button2) &&
+                ButtonIsClicked(button3) && ButtonIsClicked(button4) &&
+                ButtonIsClicked(button5) && ButtonIsClicked(button6) &&
+                ButtonIsClicked(button7) && ButtonIsClicked(button8) &&
+                ButtonIsClicked(button9))
+            {
+                DisplayMessage("Cat Scratch!");
+            }
+        }
         private void ButtonClick(object sender, RoutedEventArgs e)
         {
             Button clickedButton = sender as Button;
