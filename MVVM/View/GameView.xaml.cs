@@ -24,7 +24,6 @@ namespace TicTacToe.MVVM.View
             if(First == false)
             {
                 ComputerMove();
-                DisplayMessage("You shant win!");
             }
         }
         private void DisplayMessage(string message)
@@ -334,7 +333,14 @@ namespace TicTacToe.MVVM.View
                 {
                     ChangeButtonProperties(button5);
                 }
-                DisplayMessage("You Thought you were Sly!");
+                if(First)
+                {
+                    DisplayMessage("Great Choice!");
+                }
+                else
+                {
+                    DisplayMessage("Good Luck!");
+                }
                 firstTurn = false;
                 return;
             }
@@ -380,10 +386,10 @@ namespace TicTacToe.MVVM.View
                         DefaultMoves();
                     }
                 }
+                DisplayMessage("I See What You're Trying 🤭");
                 secondTurn = false;
                 return;
             }
-            DisplayMessage("Almost Got Me!");
             if (thirdTurn)
             {
                 if (MoveForWin() == false)
@@ -406,24 +412,21 @@ namespace TicTacToe.MVVM.View
                         {
                             DefaultMoves();
                         }
-
                     }
                 }
+                DisplayMessage("Keep Trying!");
                 thirdTurn = false;
                 return;
             }
-            DisplayMessage("Almost Got Me!");
-
-            computerWins = MoveForWin();
-            if (computerWins == false)
+            if (MoveForWin() == false)
             {
                 if (PreventWin() == false)
                 {
                     DefaultMoves();
-                    DisplayMessage("Your Turn!");
                     return;
                 }
             }
+            DisplayMessage("");
         }
         private void ChangeButtonProperties(Button theButton, bool userTurn = false)
         {
@@ -470,7 +473,7 @@ namespace TicTacToe.MVVM.View
             if (First == false)
             {
                 ComputerMove();
-                DisplayMessage($"Your Move");
+                DisplayMessage($"Your Move :)");
             }
             else
             {
