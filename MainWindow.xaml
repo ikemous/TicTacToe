@@ -9,13 +9,14 @@
         WindowStyle="None"
         Background="Transparent"
         AllowsTransparency="True"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        >
 
     <Window.DataContext>
         <viewModel:MainViewModel />
     </Window.DataContext>
 
-    <Border Background="#272537"
+    <Border Background="#356184"
             CornerRadius="30"
             >
         <Grid MouseDown="MoveWindow">
@@ -31,7 +32,7 @@
             </Grid.ColumnDefinitions>
 
             <Border 
-                Background="LightGray" 
+                Background="#B48A6D" 
                 Grid.ColumnSpan="3"
                 CornerRadius="30 30 0 0" />
             <Button 
@@ -41,7 +42,7 @@
                 Click="MinimizeWindow"
                 Background="Yellow"
                 Style="{StaticResource WindowButtonTheme}" Margin="95,2,80,0" RenderTransformOrigin="2.6,0.5"/>
-            
+
             <Button Grid.Column="2"
                     Style="{StaticResource WindowButtonTheme}"
                     Background="Red"
@@ -50,24 +51,20 @@
                     FontSize="19" Margin="128,2,48,0"/>
 
             <TextBlock 
-                Grid.Column="0" 
-                Grid.Row="1"
+                Grid.Column="0"
                 Text="Tic-Tac-Toe"
                 VerticalAlignment="Center"
                 HorizontalAlignment="Center"
-                Foreground="White"
+                Foreground="Black"
                 FontSize="28"
-                Height="40"
-                Margin="5"/>
+                Height="40" />
 
-            <Button
+            <Button 
                 Grid.Row="1"
-                Grid.Column="2"
-                Grid.ColumnSpan="1"
-                Margin="80,10,26,10"
+                Background="#43BCCD"
                 Command="{Binding MainMenuViewCommand}"
                 Name="MainMenuButton"
-                Click="MainMenuButtonClick"
+                Click="MainMenuButtonClick" Margin="31,10"
             >
                 <Button.Resources>
                     <Style TargetType="Border">
@@ -87,6 +84,7 @@
                 Grid.Row="2"
                 Grid.Column="1"
                 Grid.ColumnSpan="1"
+                Background="#B48A6D"
                 Margin="100,300,100,20" 
                 Command="{Binding GameViewCommand}"
                 Name="StartButton" Click="StartGame"
