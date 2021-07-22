@@ -22,7 +22,9 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="125"/>
         </Grid.ColumnDefinitions>
+        <!-- Panel To Hold The Scorboard-->
         <StackPanel Grid.Row="1">
+            <!-- Scoreboard Grid Creation -->
             <Grid Height="80" Margin="0,0,-0.111,0">
                 <Grid.RowDefinitions>
                     <RowDefinition />
@@ -33,6 +35,7 @@
                     <ColumnDefinition Width="11*" />
                     <ColumnDefinition Width="14*" />
                 </Grid.ColumnDefinitions>
+                <!-- Wins Text -->
                 <TextBlock 
                     Text="Wins: "
                     FontSize="15"
@@ -40,6 +43,7 @@
                     VerticalAlignment="Center"
                     HorizontalAlignment="Right"
                 />
+                <!-- Textblock to Store Total Wins -->
                 <TextBlock
                     Grid.Column="1"
                     Name="WinsText"
@@ -49,6 +53,7 @@
                     HorizontalAlignment="Left"
                     Foreground="White"
                 />
+                <!-- Texblock to indicate Total Loses-->
                 <TextBlock
                     Grid.Row="1"
                     Text="Loses: "
@@ -57,6 +62,7 @@
                     HorizontalAlignment="Right"
                     Foreground="White"
                 />
+                <!-- Textblock to store total loses-->
                 <TextBlock
                     Grid.Row="1"
                     Grid.Column="1"
@@ -67,6 +73,7 @@
                     HorizontalAlignment="Left"
                     Foreground="White"
                 />
+                <!-- Text block to indicate total Ties -->
                 <TextBlock
                     Grid.Row="2"
                     Grid.Column="0"
@@ -76,6 +83,7 @@
                     HorizontalAlignment="Right"
                     Foreground="White"
                  />
+                <!-- Textblock to store total loses -->
                 <TextBlock
                     Grid.Row="2"
                     Grid.Column="1"
@@ -88,6 +96,7 @@
                 />
             </Grid>
         </StackPanel>
+        <!-- Textbloxk Storing Message For The User -->
         <TextBlock 
             Grid.Column="1"
             Grid.ColumnSpan="3" 
@@ -96,68 +105,70 @@
             Name="MessageBlock"
             VerticalAlignment="Center"
             HorizontalAlignment="Center"/>
-
-
-
-
-
-
+        <!-- Row 1 Col 1 -->
         <Button Grid.Row="1"
                 Grid.Column="1"
                 Style="{StaticResource TicTacButtonTheme}"
                 Click="ButtonClick"
                 Content=""
                 Name="button1"/>
-
+        <!-- Row 1 Col 2 -->
         <Button Grid.Row="1"
                 Grid.Column="2"
                 Style="{StaticResource TicTacButtonTheme}"
                 Click="ButtonClick"
                 Content=""
                 Name="button2"/>
+        <!-- Row 1 Col 3 -->
         <Button Grid.Row="1"
                 Grid.Column="3"
                 Style="{StaticResource TicTacButtonTheme}"
                 Click="ButtonClick"
                 Content=""
                 Name="button3"/>
+        <!-- Row 2 Col 1 -->
         <Button Grid.Row="2"
                 Grid.Column="1"
                 Style="{StaticResource TicTacButtonTheme}"
                 Click="ButtonClick"
                 Content=""
                 Name="button4"/>
+        <!-- Row 2 Col 2 -->
         <Button Grid.Row="2"
                 Grid.Column="2"
                 Style="{StaticResource TicTacButtonTheme}"
                 Click="ButtonClick"
                 Content=""
                 Name="button5"/>
+        <!-- Row 2 Col 3 -->
         <Button Grid.Row="2"
                 Grid.Column="3"
                 Style="{StaticResource TicTacButtonTheme}"
                 Click="ButtonClick"
                 Content=""
                 Name="button6"/>
+        <!-- Row 3 Col 1 -->
         <Button Grid.Row="3"
                 Grid.Column="1"
                 Style="{StaticResource TicTacButtonTheme}"
                 Click="ButtonClick"
                 Content=""
                 Name="button7"/>
+        <!-- Row 3 Col 2 -->
         <Button Grid.Row="3"
                 Grid.Column="2"
                 Style="{StaticResource TicTacButtonTheme}"
                 Click="ButtonClick"
                 Content=""
                 Name="button8"/>
+        <!-- Row 3 Col 3 -->
         <Button Grid.Row="3"
                 Grid.Column="3"
                 Style="{StaticResource TicTacButtonTheme}"
                 Click="ButtonClick"
                 Content=""
                 Name="button9"/>
-
+        <!-- Reset Game Button -->
         <Button
             Grid.Row="5"
             Grid.Column="1"
