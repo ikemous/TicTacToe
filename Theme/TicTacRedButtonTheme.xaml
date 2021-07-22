@@ -1,4 +1,15 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+﻿<!--
+    TicTacButtonRedTheme
+    Purpose: Theme for Buttons that are highlighted with red
+    Details:
+        Background is Red
+        FontSize is 30px
+        Fill, Stroke, VerticalAligment will fill according to the creation
+        HorizontalAlignment will be centered
+        Border Radius is 10px removing the sharp edges with a thickness of 1
+        Horizontal and Vertical Alignment are Centered
+-->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="{x:Type Button}" x:Key="TicTacButtonRedTheme">
         <Style.Setters>
@@ -7,7 +18,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}" BorderThickness="1" CornerRadius="10" Margin="10, 5, 10, 5">
+                        <Border BorderThickness="1" Background="{TemplateBinding Background}" CornerRadius="10" Margin="10, 5, 10, 5">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center">
                             </ContentPresenter>
                         </Border>

@@ -1,4 +1,16 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+﻿<!--
+    TicTacButtonTheme
+    Purpose: To Set the template of the tic tac toe choices 
+    Details:
+        Background is White
+        FontSize is 30px
+        Fill, Stroke, VerticalAligment will fill according to the creation
+        HorizontalAlignment will be centered
+        Border Radius is 10px removing the sharp edges with a thickness of 1
+        Horizontal and Vertical Alignment are Centered
+        If Hovered over the button will show a light blueish color with a white font
+-->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="{x:Type Button}" x:Key="TicTacButtonTheme">
         <Style.Setters>
