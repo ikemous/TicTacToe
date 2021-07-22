@@ -10,8 +10,8 @@
         Background="Transparent"
         AllowsTransparency="True"
         Title="MainWindow" Height="450" Width="800"
+        Icon="Images/pangolin-64.png"
         >
-
     <Window.DataContext>
         <viewModel:MainViewModel />
     </Window.DataContext>
