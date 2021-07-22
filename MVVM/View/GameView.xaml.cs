@@ -16,7 +16,8 @@ namespace TicTacToe.MVVM.View
         public GameView()
         {
             InitializeComponent();
-            if(First == false)
+            SetScoreboard();
+            if (First == false)
             {
                 ComputerMove();
                 DisplayMessage($"Your Move :)");
@@ -46,6 +47,8 @@ namespace TicTacToe.MVVM.View
                 ButtonIsClicked(button9))
             {
                 DisplayMessage("Cat Scratch!");
+                GlobalData.CatScratches += 1;
+                SetScoreboard();
             }
             else
             {
@@ -412,10 +415,9 @@ namespace TicTacToe.MVVM.View
         }
         private void ResetButton(Button theButton)
         {
-            var style = FindResource("TicTacButtonTheme") as Style;
             theButton.Content = "";
             theButton.IsEnabled = true;
-            theButton.Style = style;
+            theButton.Style = FindResource("TicTacButtonTheme") as Style;
         }
         private void ResetGame(object sender, RoutedEventArgs e)
         {
@@ -431,6 +433,7 @@ namespace TicTacToe.MVVM.View
             firstTurn = true;
             secondTurn = true;
             thirdTurn = true;
+            SetScoreboard();
             if (First == false)
             {
                 ComputerMove();
@@ -441,6 +444,12 @@ namespace TicTacToe.MVVM.View
                 DisplayMessage($"{UserName} You're First!");
             }
         }
+        private void SetScoreboard()
+        {
+            WinsText.Text = GlobalData.Wins.ToString();
+            LosesText.Text = GlobalData.Loses.ToString();
+            TiesText.Text = GlobalData.CatScratches.ToString();
+        }
         private bool UserSymbolButton(Button theButton) => theButton.Content.ToString() == UserSymbol;
         private void WinMove(Button winningButton, Button button2, Button button3)
         {
@@ -449,7 +458,9 @@ namespace TicTacToe.MVVM.View
             HighlightButton(button2);
             HighlightButton(button3);
             DisplayMessage("Rip X.X");
+            GlobalData.Loses += 1;
             LockAllTiles();
+            SetScoreboard();
         }
     }
 }

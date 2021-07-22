@@ -22,6 +22,72 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="125"/>
         </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="1">
+            <Grid Height="80" Margin="0,0,-0.111,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="11*" />
+                    <ColumnDefinition Width="14*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock 
+                    Text="Wins: "
+                    FontSize="15"
+                    Foreground="White"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Right"
+                />
+                <TextBlock
+                    Grid.Column="1"
+                    Name="WinsText"
+                    Text="0"
+                    FontSize="15"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left"
+                    Foreground="White"
+                />
+                <TextBlock
+                    Grid.Row="1"
+                    Text="Loses: "
+                    FontSize="15"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Right"
+                    Foreground="White"
+                />
+                <TextBlock
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Name="LosesText"
+                    Text=""
+                    FontSize="15"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left"
+                    Foreground="White"
+                />
+                <TextBlock
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Text="Ties: "
+                    FontSize="15"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Right"
+                    Foreground="White"
+                 />
+                <TextBlock
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Text=""
+                    Name="TiesText"
+                    FontSize="15"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left"
+                    Foreground="White"
+                />
+            </Grid>
+        </StackPanel>
         <TextBlock 
             Grid.Column="1"
             Grid.ColumnSpan="3" 
@@ -30,14 +96,19 @@
             Name="MessageBlock"
             VerticalAlignment="Center"
             HorizontalAlignment="Center"/>
-        
+
+
+
+
+
+
         <Button Grid.Row="1"
                 Grid.Column="1"
                 Style="{StaticResource TicTacButtonTheme}"
                 Click="ButtonClick"
                 Content=""
                 Name="button1"/>
-        
+
         <Button Grid.Row="1"
                 Grid.Column="2"
                 Style="{StaticResource TicTacButtonTheme}"
