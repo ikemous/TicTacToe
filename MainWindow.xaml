@@ -12,10 +12,11 @@
         Title="MainWindow" Height="450" Width="800"
         Icon="Images/pangolin-64.png"
         >
+    <!-- DataContext To Hold The MainViewModel-->
     <Window.DataContext>
         <viewModel:MainViewModel />
     </Window.DataContext>
-
+    <!-- Initial Border With Radious-->
     <Border Background="#356184"
             CornerRadius="30"
             >
@@ -30,11 +31,12 @@
                 <ColumnDefinition />
                 <ColumnDefinition Width="200"/>
             </Grid.ColumnDefinitions>
-
+            <!-- Top Row Holding Title, Closing button and minimize button -->
             <Border 
                 Background="#B48A6D" 
                 Grid.ColumnSpan="3"
                 CornerRadius="30 30 0 0" />
+            <!-- Minimize Button -->
             <Button 
                 Grid.Column="2"
                 Content="-"
@@ -42,14 +44,14 @@
                 Click="MinimizeWindow"
                 Background="Yellow"
                 Style="{StaticResource WindowButtonTheme}" Margin="95,2,80,0" RenderTransformOrigin="2.6,0.5"/>
-
+            <!--Closing Button-->
             <Button Grid.Column="2"
                     Style="{StaticResource WindowButtonTheme}"
                     Background="Red"
                     Click="CloseWindow"
                     Content="X"
                     FontSize="19" Margin="128,2,48,0"/>
-
+            <!-- Tic Tac Toe Header-->
             <TextBlock 
                 Grid.Column="0"
                 Text="Tic-Tac-Toe"
@@ -58,7 +60,7 @@
                 Foreground="Black"
                 FontSize="28"
                 Height="40" />
-
+            <!-- Menu Button -->
             <Button 
                 Grid.Row="1"
                 Background="#43BCCD"
@@ -73,13 +75,14 @@
                 </Button.Resources>
                 Main Menu
             </Button>
-
+            <!-- Content With the Default Binding of Main Menu -->
             <ContentControl
                 Grid.Row="2"
                 Grid.ColumnSpan="3"
                 Margin="0"
                 Content="{Binding CurrentView}"
                 />
+            <!-- Start Button Moving To Game View-->
             <Button
                 Grid.Row="2"
                 Grid.Column="1"
