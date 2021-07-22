@@ -94,6 +94,7 @@
             Margin="155,15" 
             Name="Reset"
             Click="ResetGame"
+            Background="#43BCCD"
             >
             <Button.Resources>
                 <Style TargetType="Border">

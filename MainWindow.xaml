@@ -84,7 +84,7 @@
                 Grid.Row="2"
                 Grid.Column="1"
                 Grid.ColumnSpan="1"
-                Background="#B48A6D"
+                Background="#43BCCD"
                 Margin="100,300,100,20" 
                 Command="{Binding GameViewCommand}"
                 Name="StartButton" Click="StartGame"

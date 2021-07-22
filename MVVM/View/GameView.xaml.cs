@@ -180,7 +180,7 @@ namespace TicTacToe.MVVM.View
             else if (NoTextButton(button9)) ChangeButtonProperties(button9);
         }
         private void DisplayMessage(string message) => MessageBlock.Text = message;
-        private void HighlightButton(Button theButton) => theButton.Background = Brushes.Red;
+        private void HighlightButton(Button theButton) => theButton.Style = FindResource("TicTacButtonRedTheme") as Style;
         private void LockAllTiles()
         {
             button1.IsEnabled = false;
@@ -412,9 +412,10 @@ namespace TicTacToe.MVVM.View
         }
         private void ResetButton(Button theButton)
         {
+            var style = FindResource("TicTacButtonTheme") as Style;
             theButton.Content = "";
             theButton.IsEnabled = true;
-            theButton.Background = Brushes.White;
+            theButton.Style = style;
         }
         private void ResetGame(object sender, RoutedEventArgs e)
         {
