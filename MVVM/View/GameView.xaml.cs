@@ -166,7 +166,6 @@ namespace TicTacToe.MVVM.View
                     return;
                 }
             }
-            CatScratch();
         }
         private bool ComputerSymbolButton(Button theButton) => theButton.Content.ToString() == ComputerSymbol;
         private void DefaultMoves()
