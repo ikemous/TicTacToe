@@ -208,7 +208,7 @@ namespace TicTacToe.MVVM.View
                     }
                 }
                 //Display Tauting message
-                DisplayMessage("I See What You're Trying 🤭");
+                DisplayMessage("OOPSIE! I see it! ;)");
                 //Indicate that second turn is Over
                 secondTurn = false;
                 //Return to avoid going into the other code
@@ -713,7 +713,7 @@ namespace TicTacToe.MVVM.View
             HighlightButton(button2);
             HighlightButton(button3);
             //Display message
-            DisplayMessage("Rip X.X");
+            DisplayMessage("HAHA YOU LOSE! LOOOOOSER!!!");
             //Update loss
             GlobalData.Loses += 1;
             //Lock all tiles
