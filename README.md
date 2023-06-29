@@ -9,7 +9,7 @@
 1. [Creator Information](#created-by)
 
 ## Purpose
-Tic-tac-toe game designed to be unbeatable. It doesn't matter if you go first or if you go second! Try your best to win and if you do please tell me so I can make sure it never happens again >:D!
+Tic-tac-toe game designed to be unbeatable! It doesn't matter if you go first or if you go second! Try your best to win and if you do please tell me so I can make sure it never happens again >:D!
 
 ## Use
     1. Download the TicTacTow.exe file in the repository
@@ -30,3 +30,4 @@ Tic-tac-toe game designed to be unbeatable. It doesn't matter if you go first or
 [![Ike's GitHub stats](https://github-readme-stats.vercel.app/api?username=ikemous&show_icons=true&theme=radical)](https://github.com/anuraghazra/github-readme-stats)</br>
 
 [Github](https://github.com/ikemous) Profile
+
